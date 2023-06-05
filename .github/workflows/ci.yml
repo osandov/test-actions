@@ -31,5 +31,5 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: |
-        echo ${{ matrix.cc }}
-        python3 --version
+          echo ${{ matrix.cc }}
+          python3 --version
