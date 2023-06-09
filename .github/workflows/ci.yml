@@ -22,4 +22,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
           allow-prereleases: true
-      - run: python3 --version
+      - run: |
+          echo event_name = ${{ github.event_name }}
+          echo label name = ${{ github.event.label.name }}
+          python3 --version
