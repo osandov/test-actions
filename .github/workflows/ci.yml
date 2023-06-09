@@ -12,9 +12,9 @@ jobs:
     if: ${{ github.event_name != 'labeled' || github.event.label.name == 'test-all-python-versions' }}
     strategy:
       matrix:
-        python-version:
-          - 3.12
-          - 3.11
+        python-version: ${{ contains(github.event.pull_request.labels.*.name, 'test-all-python-versions') && 
+                            fromJSON('["3.12", "3.11"]') ||
+                            fromJSON('["3.11"]') }}
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
