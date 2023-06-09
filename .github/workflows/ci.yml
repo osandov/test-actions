@@ -9,7 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: ${{ github.event.action != 'labeled' || github.event.label.name == 'test-all-python-versions' }}
     strategy:
       matrix:
         python-version: ${{ contains(github.event.pull_request.labels.*.name, 'test-all-python-versions') && 
