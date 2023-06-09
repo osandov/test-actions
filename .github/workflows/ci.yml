@@ -7,6 +7,7 @@ on:
       - labeled
 
 jobs:
+  runs-on: ubuntu-latest
   test:
     if: ${{ github.event_name != 'labeled' || github.event.label.name == 'test-all-python-versions' }}
     strategy:
