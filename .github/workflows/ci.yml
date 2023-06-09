@@ -24,5 +24,6 @@ jobs:
           allow-prereleases: true
       - run: |
           echo event_name = ${{ github.event_name }}
+          echo event type = ${{ github.event.type }}
           echo label name = ${{ github.event.label.name }}
           python3 --version
